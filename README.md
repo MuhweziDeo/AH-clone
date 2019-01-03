@@ -1,6 +1,8 @@
 Authors Haven - A Social platform for the creative at heart and mind.
 =======
-
+## Badges
+- [![Build Status](https://travis-ci.org/MuhweziDeo/AH-clone.svg?branch=develop)](https://travis-ci.org/MuhweziDeo/AH-clone)
+- 
 ## Vision
 Create a community of like minded authors to foster inspiration and innovation
 by leveraging the modern web.
