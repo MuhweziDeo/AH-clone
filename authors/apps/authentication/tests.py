@@ -7,14 +7,14 @@ class ModelTestCase(TestCase):
 
     def setUp(self):
         """Define the test client and other test variables."""
-        self.username = ''
+        self.username = 'Douglas'
         self.email = 'daglach7@gmail.com'
         self.password = '12345'
         self.usermanager = UserManager()
 
     def test_create_user(self):
-        # pass
+        """Test for successful creation of a user."""
         with pytest.raises(TypeError):
-           user = User.objects.create(username='',email=self.email,password=self.password)
+           user = self.usermanager.create_user(username=None, email=self.email, password=self.password)
             
  
