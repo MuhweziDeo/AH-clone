@@ -1,4 +1,4 @@
-Authors Haven - A Social platform for the creative at heart and mind.
+Authors Haven - A Social platform for the creative at heart.
 =======
 ## Badges
 - [![Build Status](https://travis-ci.org/MuhweziDeo/AH-clone.svg?branch=develop)](https://travis-ci.org/MuhweziDeo/AH-clone)
