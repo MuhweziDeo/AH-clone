@@ -82,18 +82,7 @@ WSGI_APPLICATION = 'authors.wsgi.application'
 
 
 IS_HEROKU = os.getenv('IS_HEROKU')
-if not IS_HEROKU :
-    DATABASES = {
-      'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'authorsdb',
-        'USER': 'authorsdbuser',
-        'PASSWORD': 'authorsdbpass',
-        'HOST': '127.0.0.1',
-        'PORT': '5432',
-        }
-    }
-else:
+if IS_HEROKU :
     db_url = os.getenv('DATBASE_URL')
     db_url_parts  = urllib.parse.urlparse(db_url)
 
@@ -105,6 +94,31 @@ else:
         'PASSWORD': db_url_parts.password,
         'HOST': db_url_parts.hostname,
         'PORT': db_url_parts.port,
+        }
+    }
+elif 'TRAVIS' in os.environ:
+    DATABASES = {
+      'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'travisci',
+        'USER': 'postgres',
+        'PASSWORD': '',
+        'HOST': 'localhost',
+        'PORT': '',
+        }
+    }
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': 'authorsdb',
+            'USER': os.getenv('DB_USER'),
+            'PASSWORD': os.getenv('DB_PASS'),
+            'HOST': '127.0.0.1',
+            'PORT': '5432',
+            'TEST': {
+                'NAME': 'mytestdatabase',
+            },
         }
     }
 

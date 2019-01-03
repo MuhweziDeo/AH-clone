@@ -2,11 +2,15 @@ language: python
 python:
     - "3.6"
 env:
-  - DJANGO_VERSION=2.1
-  - DJANGO_SETTINGS_MODULE=authors.settings
+    - TRAVIS=True 
+    - DJANGO_VERSION=2.1
+    - DJANGO_SETTINGS_MODULE=authors.settings
 
 install:
     - pip install -r requirements.txt
+
+before-script:
+    - psql -c "CREATE DATABASE authorstestdb; " -U postgres
 
 script:
     - python manage.py test
