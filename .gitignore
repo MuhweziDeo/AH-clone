@@ -93,3 +93,5 @@ env/
 # SQLite3
 db.sqlite3
 .vscode/
+# static files
+static/
