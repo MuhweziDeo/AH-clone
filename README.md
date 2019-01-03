@@ -2,7 +2,9 @@ Authors Haven - A Social platform for the creative at heart.
 =======
 ## Badges
 - [![Build Status](https://travis-ci.org/MuhweziDeo/AH-clone.svg?branch=develop)](https://travis-ci.org/MuhweziDeo/AH-clone)
-- 
+- [![Maintainability](https://api.codeclimate.com/v1/badges/b02369e35bc61e2b3277/maintainability)](https://codeclimate.com/github/MuhweziDeo/AH-clone/maintainability)
+- [![Coverage Status](https://coveralls.io/repos/github/MuhweziDeo/AH-clone/badge.svg)](https://coveralls.io/github/MuhweziDeo/AH-clone)
+
 ## Vision
 Create a community of like minded authors to foster inspiration and innovation
 by leveraging the modern web.
