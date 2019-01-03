@@ -24,7 +24,9 @@ SECRET_KEY = '7pgozr2jn7zs_o%i8id6=rddie!*0f0qy3$oy$(8231i^4*@u3'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'ah-xmen-demo.herokuapp.com'
+]
 
 # Application definition
 
@@ -46,6 +48,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'corsheaders.middleware.CorsMiddleware',
@@ -83,7 +86,7 @@ WSGI_APPLICATION = 'authors.wsgi.application'
 
 IS_HEROKU = os.getenv('IS_HEROKU')
 if IS_HEROKU :
-    db_url = os.getenv('DATBASE_URL')
+    db_url = os.getenv('DATABASE_URL')
     db_url_parts  = urllib.parse.urlparse(db_url)
 
     DATABASES = {
@@ -157,6 +160,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+# WhiteNoise setup for serving static files on heroku
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 CORS_ORIGIN_WHITELIST = (
     '0.0.0.0:4000',
