@@ -83,7 +83,7 @@ WSGI_APPLICATION = 'authors.wsgi.application'
 
 IS_HEROKU = os.getenv('IS_HEROKU')
 if IS_HEROKU :
-    db_url = os.getenv('DATBASE_URL')
+    db_url = os.getenv('DATABASE_URL')
     db_url_parts  = urllib.parse.urlparse(db_url)
 
     DATABASES = {
