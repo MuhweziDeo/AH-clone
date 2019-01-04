@@ -84,11 +84,13 @@ venv/
 ENV/
 env/
 
+
 # ignore static files
 static/admin/
 static/rest_framework/
 static/django_extensions/
 static/staticfiles.json
+
 
 # Spyder project settings
 .spyderproject
@@ -99,3 +101,5 @@ static/staticfiles.json
 # SQLite3
 db.sqlite3
 .vscode/
+# static files
+static/
