@@ -84,6 +84,12 @@ venv/
 ENV/
 env/
 
+# ignore static files
+static/admin/
+static/rest_framework/
+static/django_extensions/
+static/staticfiles.json
+
 # Spyder project settings
 .spyderproject
 
