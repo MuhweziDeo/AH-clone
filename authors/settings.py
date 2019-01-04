@@ -25,7 +25,8 @@ SECRET_KEY = '7pgozr2jn7zs_o%i8id6=rddie!*0f0qy3$oy$(8231i^4*@u3'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'ah-xmen-demo.herokuapp.com'
+    'ah-xmen-demo.herokuapp.com',
+    'localhost',
 ]
 
 # Application definition
